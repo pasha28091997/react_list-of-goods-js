@@ -47,10 +47,6 @@ export const App = () => {
     setSortField(field);
   };
 
-  const reverseList = () => {
-    setIsReversed(!isReversed);
-  };
-
   const resetList = () => {
     setGoods(goodsFromServer);
     setSortField('');
@@ -88,7 +84,7 @@ export const App = () => {
           className={cn('button', 'is-warning', {
             'is-light': !isReversed,
           })}
-          onClick={reverseList}
+          onClick={() => setIsReversed(!isReversed)}
         >
           Reverse
         </button>
