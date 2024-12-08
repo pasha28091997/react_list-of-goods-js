@@ -22,14 +22,14 @@ export const App = () => {
   const [sortField, setSortField] = useState('');
   const [isReversed, setIsReversed] = useState(false);
 
-  const ALPHABETICAL = 'Sort alphabetically';
+  const ALPHABETICALLY = 'Sort alphabetically';
   const LENGTH = 'Sort by length';
 
   const getVisibleGoods = () => {
     let visibleGoods = [...goods];
 
     if (sortField) {
-      if (sortField === ALPHABETICAL) {
+      if (sortField === ALPHABETICALLY) {
         visibleGoods = visibleGoods.sort((a, b) => a.localeCompare(b));
       } else if (sortField === LENGTH) {
         visibleGoods = visibleGoods.sort((a, b) => a.length - b.length);
@@ -66,9 +66,9 @@ export const App = () => {
         <button
           type="button"
           className={cn('button', 'is-info', {
-            'is-light': sortField !== ALPHABETICAL,
+            'is-light': sortField !== ALPHABETICALLY,
           })}
-          onClick={() => applySorting(ALPHABETICAL)}
+          onClick={() => applySorting(ALPHABETICALLY)}
         >
           Sort alphabetically
         </button>
